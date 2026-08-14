@@ -14,10 +14,7 @@ export async function getStaticPaths() {
 	const posts = await getCollection("blog", ({ data }) => {
 		return !data.draft && data.publishDate < new Date();
 	});
-	const localizedPosts = posts.filter((page) => {
-		const [lang, ...slug] = page.slug.split("/");
-		return lang === i18next.language;
-	});
+	const localizedPosts = posts;
 	const categories = new Set();
 	localizedPosts.map((post) => {
 		typeof post.data.category === "string" &&

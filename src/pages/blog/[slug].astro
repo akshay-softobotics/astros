@@ -5,7 +5,7 @@ import Layout from "@layouts/Layout.astro";
 import { getArticleReadingTime } from "@utils/blog";
 import { localizePath } from "astro-i18next";
 import { Icon } from "astro-icon/components";
-import i18next, { changeLanguage } from "i18next";
+import { changeLanguage } from "i18next";
 
 changeLanguage("en");
 
@@ -13,14 +13,9 @@ changeLanguage("en");
 export async function getStaticPaths() {
 	changeLanguage("en");
 	const blogEntries = await getCollection("blog");
-	var localizedBlogEntries = blogEntries.filter((entry) =>
-		entry.slug.startsWith(i18next.language),
-	);
-	return localizedBlogEntries.map((post) => {
-		let slug = post.slug;
-		slug = slug.substring(3).replaceAll("blog/", "");
+	return blogEntries.map((post) => {
 		return {
-			params: { slug: slug },
+			params: { slug: post.slug },
 			props: { post: post },
 		};
 	});
