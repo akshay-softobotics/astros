@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 author: Akshay
 tags:
   - AI
