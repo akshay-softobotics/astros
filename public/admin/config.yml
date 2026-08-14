@@ -1,12 +1,12 @@
-local_backend: true
+# local_backend: true
 
 logo_url: /logo.svg
 
 backend:
     name: "github"
-    repo: https://github.com/akshay-softobotics/astros.git
+    repo: akshay-softobotics/astros.git
     branch: main
-    base_url: https://cms.majestico.workers.dev
+    # base_url: https://cms.majestico.workers.dev
     automatic_deployments: false
 
 media_folder: "public/images"
