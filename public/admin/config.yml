@@ -4,7 +4,7 @@ logo_url: /logo.svg
 
 backend:
     name: "github"
-    repo: akshay-softobootics
+    repo: https://github.com/akshay-softobotics/astros.git
     branch: main
     base_url: https://cms.majestico.workers.dev
     automatic_deployments: false
