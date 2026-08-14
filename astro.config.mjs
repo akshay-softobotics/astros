@@ -70,7 +70,4 @@ export default defineConfig({
 			[rehypeAutolinkHeadings, autolinkConfig],
 		],
 	},
-	experimental: {
-		contentCollectionCache: true,
-	},
 });
